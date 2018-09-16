@@ -1,0 +1,11 @@
+appVersion: v1
+Kind: Pod
+metadata:
+        name: sample-jenkins
+specs:
+   containers:
+           - name: Jenkins
+             image: jenkins
+             ports:
+             - containerPort: 8080        
+
