@@ -3,6 +3,7 @@ kind: Pod
 metadata:
         name: sample-jenkins
 spec:
+   hostNetwork: true
    containers:
            - name: jenkins
              image: jenkins
