@@ -4,7 +4,7 @@ metadata:
         name: sample-jenkins
 spec:
    containers:
-           - name: Jenkins
+           - name: jenkins
              image: jenkins
              ports:
              - containerPort: 8080        
