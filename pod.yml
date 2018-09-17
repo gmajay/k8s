@@ -3,10 +3,10 @@ kind: Pod
 metadata:
         name: sample-jenkins
 spec:
-   hostNetwork: true
+   hostNetwork: true    #to expose the port to node to access jenkins
    containers:
            - name: jenkins
              image: jenkins
              ports:
              - containerPort: 8080        
-
+#               hostPort: 8080            # to expose the port to node to access jenkins
