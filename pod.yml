@@ -1,7 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-        name: sample-jenkins
+        name: jenkins
+        labels: 
+          app: jenkins
 spec:
    hostNetwork: true    #to expose the port to node to access jenkins
    containers:
