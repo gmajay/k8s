@@ -1,0 +1,26 @@
+#apiVersion: apps/v1
+apiVersion: extensions/v1beta1 
+kind: Deployment
+metadata: 
+   name: jenkins-2.6
+spec: 
+   replicas: 1
+   minReadySeconds: 30
+   strategy: 
+     type: RollingUpdate
+     rollingUpdate: 
+       maxUnavailable: 1
+       maxSurge: 1
+   template: 
+     metadata: 
+       labels: 
+         name: jenkins-2.6
+         ver: "2.6"
+     spec: 
+       containers:
+       - name: jenkins
+         image: jenkins
+         ports:
+         - containerPort: 9090 
+#       nodeSelector:    
+#         jenkins: 2.6 

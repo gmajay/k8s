@@ -5,10 +5,10 @@ metadata:
 spec: 
   selector:
     app: jenkins
-  type: NodePort 
+#  type: NodePort 
+    type: LoadBalancer 
   ports:
   - name: test 
     port: 8080
-    nodePort: 30001
+#    nodePort: 30001
     protocol: TCP 
-    

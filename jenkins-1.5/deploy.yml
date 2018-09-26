@@ -1,0 +1,26 @@
+#apiVersion: apps/v1
+apiVersion: extensions/v1beta1 
+kind: Deployment
+metadata: 
+   name: jenkins-1.5
+spec: 
+   replicas: 1
+   minReadySeconds: 30
+   strategy: 
+     type: RollingUpdate
+     rollingUpdate: 
+       maxUnavailable: 1
+       maxSurge: 1
+   template: 
+     metadata: 
+       labels: 
+         name: jenkins-1.5
+         ver: "1.5"
+     spec: 
+       containers:
+       - name: jenkins
+         image: jenkins:1.590
+         ports:
+         - containerPort: 8080 
+ 
+   
